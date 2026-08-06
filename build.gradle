@@ -1,6 +1,5 @@
 plugins {
     id 'java'
-    id 'com.github.johnrengelman.shadow' version '8.1.1'
 }
 
 group = 'com.xalchimes'
@@ -24,14 +23,6 @@ java {
     }
 }
 
-tasks.withType(JavaCompile) {
+tasks.compileJava {
     options.encoding = 'UTF-8'
-}
-
-shadowJar {
-    archiveClassifier = ''
-}
-
-build {
-    dependsOn shadowJar
 }
