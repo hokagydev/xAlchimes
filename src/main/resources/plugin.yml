@@ -1,0 +1,8 @@
+name: XAlchimes
+version: 1.0.0
+main: com.xalchimes.XAlchimes
+api-version: 1.21
+commands:
+  alchemy:
+    description: Open alchemy GUI
+    usage: /alchemy
