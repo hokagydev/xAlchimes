@@ -9,6 +9,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.PotionMeta;
 import org.bukkit.potion.PotionData;
 import org.bukkit.potion.PotionType;
@@ -30,7 +31,7 @@ public class AlchemyGUI implements Listener {
         ItemStack ingredient2 = new ItemStack(Material.SUGAR);
         ItemStack ingredient3 = new ItemStack(Material.GLOWSTONE_DUST);
         ItemStack exchange = new ItemStack(Material.EMERALD);
-        ItemStack exchangeMeta = exchange.getItemMeta();
+        ItemMeta exchangeMeta = exchange.getItemMeta();
         exchangeMeta.setDisplayName(ChatColor.GREEN + "Exchange");
         exchange.setItemMeta(exchangeMeta);
 
@@ -91,7 +92,7 @@ public class AlchemyGUI implements Listener {
             }
         }
 
-        PlayerInventory inv = player.getInventory();
+        Inventory inv = player.getInventory();
         ItemStack potion = null;
         int slot = -1;
 
@@ -129,7 +130,7 @@ public class AlchemyGUI implements Listener {
     }
 
     private boolean hasIngredients(Player player) {
-        PlayerInventory inv = player.getInventory();
+        Inventory inv = player.getInventory();
         boolean hasSugar = false;
         boolean hasGlowstone = false;
 
@@ -142,7 +143,7 @@ public class AlchemyGUI implements Listener {
     }
 
     private void removeIngredients(Player player) {
-        PlayerInventory inv = player.getInventory();
+        Inventory inv = player.getInventory();
         for (int i = 0; i < inv.getSize(); i++) {
             ItemStack item = inv.getItem(i);
             if (item == null) continue;
