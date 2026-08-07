@@ -22,7 +22,10 @@ public class AlchemyGUI implements Listener {
     private final Map<UUID, Inventory> openInventories = new HashMap<>();
     private final Map<UUID, Long> cooldowns = new HashMap<>();
 
-    public AlchemyGUI(Player player) {
+    public AlchemyGUI() {
+    }
+
+    public void open(Player player) {
         Inventory inv = Bukkit.createInventory(null, 54, ChatColor.DARK_PURPLE + "Alchemy Table");
         
         ItemStack filler = new ItemStack(Material.BLACK_STAINED_GLASS_PANE);
@@ -63,9 +66,6 @@ public class AlchemyGUI implements Listener {
         }
         potion.setItemMeta(meta);
         return potion;
-    }
-
-    public void open() {
     }
 
     @EventHandler
